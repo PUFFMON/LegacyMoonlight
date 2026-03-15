@@ -2813,6 +2813,7 @@
     <ClInclude Include="StainedGlassBlock.h" />
     <ClInclude Include="StainedGlassPaneBlock.h" />
     <ClInclude Include="StoneButtonTile.h" />
+    <ClInclude Include="StoneDecorativeTile.h" />
     <ClInclude Include="StructureFeatureIO.h" />
     <ClInclude Include="StructureFeatureSavedData.h" />
     <ClInclude Include="SwampRiversLayer.h" />
@@ -3640,6 +3641,7 @@
     <ClCompile Include="StainedGlassBlock.cpp" />
     <ClCompile Include="StainedGlassPaneBlock.cpp" />
     <ClCompile Include="StoneButtonTile.cpp" />
+    <ClCompile Include="StoneDecorativeTile.cpp" />
     <ClCompile Include="StructureFeatureIO.cpp" />
     <ClCompile Include="StructureFeatureSavedData.cpp" />
     <ClCompile Include="Team.cpp" />
