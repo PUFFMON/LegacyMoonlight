@@ -2289,3 +2289,10 @@
 #define IDS_RICHPRESENCESTATE_BREWING                          2283
 #define IDS_RICHPRESENCESTATE_ANVIL                            2284
 #define IDS_RICHPRESENCESTATE_TRADING                          2285
+#define IDS_TILE_ANDESITE									   2286
+#define IDS_TILE_POLISHED_ANDESITE                             2287
+#define IDS_TILE_DIORITE                                       2288
+#define IDS_TILE_POLISHED_DIORITE                              2289
+#define IDS_TILE_GRANITE                                       2290
+#define IDS_TILE_POLISHED_GRANITE                              2291
+#define IDS_TILE_SMOOTH_STONE                                  2292

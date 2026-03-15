@@ -16,6 +16,7 @@ class PistonExtensionTile;
 class PistonMovingPiece;
 class StoneTile;
 class stoneBrick;
+class StoneDecorativeTile;
 class Bush;
 class StairTile;
 class LiquidTile;
@@ -365,6 +366,8 @@ public:
 	static const int clayHardened_Id = 172;
 	static const int coalBlock_Id = 173;
 
+	static const int stoneDecorative_Id = 174;
+
 
 	static Tile *stone;
 	static GrassTile *grass;
@@ -540,6 +543,8 @@ public:
 	static Tile *woolCarpet;
 	static Tile *clayHardened;
 	static Tile *coalBlock;
+
+	static Tile *stoneDecorative;
 
 	static void staticCtor();
 
@@ -726,3 +731,4 @@ public:
 };
 
 class stoneBrick : public Tile {};
+//class StoneDecorativeTile : public Tile {};
