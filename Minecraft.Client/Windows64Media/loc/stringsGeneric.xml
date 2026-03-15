@@ -8982,4 +8982,21 @@
 	<data name="IDS_TILE_SMOOTH_STONE">
 		<value>Smooth Stone</value>
 	</data>
+
+	<data name="IDS_TILE_SANDSTONE_WALL">
+		<value>Sandstone Wall</value>
+	</data>
+
+	<data name="IDS_TILE_SMOOTH_SANDSTONE_WALL">
+		<value>Sandstone Wall</value>
+	</data>
+	<data name="IDS_TILE_ANDESITE_WALL">
+		<value>Andesite Wall</value>
+	</data>
+	<data name="IDS_TILE_DIORITE_WALL">
+		<value>Diorite Wall</value>
+	</data>
+	<data name="IDS_TILE_GRANITE_WALL">
+		<value>Granite Wall</value>
+	</data>
 </root>
