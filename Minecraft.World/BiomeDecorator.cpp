@@ -47,6 +47,7 @@ void BiomeDecorator::_init()
 	gravelFeature = new SandFeature(6, Tile::gravel_Id);
 	dirtOreFeature = new OreFeature(Tile::dirt_Id, 32);
 	gravelOreFeature = new OreFeature(Tile::gravel_Id, 32);
+	andesiteOreFeature = new OreFeature(Tile::stoneDecorative_Id, 32); //
 	coalOreFeature = new OreFeature(Tile::coalOre_Id, 16);
 	ironOreFeature = new OreFeature(Tile::ironOre_Id, 8);
 	goldOreFeature = new OreFeature(Tile::goldOre_Id, 8);
@@ -318,6 +319,7 @@ void BiomeDecorator::decorateOres()
 	level->setInstaTick(true);		// 4J - optimisation
 	decorateDepthSpan(20, dirtOreFeature, 0, Level::genDepth);
 	decorateDepthSpan(10, gravelOreFeature, 0, Level::genDepth);
+	decorateDepthSpan(10, andesiteOreFeature, 0, Level::genDepth);
 	decorateDepthSpan(20, coalOreFeature, 0, Level::genDepth);
 	decorateDepthSpan(20, ironOreFeature, 0, Level::genDepth / 2);
 	decorateDepthSpan(2, goldOreFeature, 0, Level::genDepth / 4);
