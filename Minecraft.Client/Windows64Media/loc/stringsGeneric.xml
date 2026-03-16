@@ -8231,7 +8231,7 @@
 	</data>
 
 	<data name="IDS_DESC_COBBLESTONE_WALL">
-		<value>A wall made of Cobblestone.</value>
+		<value>A wall made that can be used for building. It's taller than a block.</value>
 	</data>
 
 	<data name="IDS_DESC_ANVIL">
@@ -8957,7 +8957,6 @@
 	<data name="IDS_WINDOWS_EXIT">
 		<value>Exit Minecraft</value>
 	</data>	
-	</data>
 
 	<data name="IDS_TILE_ANDESITE">
 		<value>Andesite</value>
@@ -8992,7 +8991,7 @@
 	</data>
 
 	<data name="IDS_TILE_SMOOTH_SANDSTONE_WALL">
-		<value>Sandstone Wall</value>
+		<value>Smooth Sandstone Wall</value>
 	</data>
 	<data name="IDS_TILE_ANDESITE_WALL">
 		<value>Andesite Wall</value>
@@ -9002,5 +9001,8 @@
 	</data>
 	<data name="IDS_TILE_GRANITE_WALL">
 		<value>Granite Wall</value>
+	</data>
+	<data name="IDS_DESC_STONE_DECORATIVE">
+		<value>A stone block used for building.</value>
 	</data>
 </root>
