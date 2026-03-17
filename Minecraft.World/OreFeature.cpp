@@ -8,7 +8,7 @@ void OreFeature::_init(int tile, int count, int targetTile, int aux)
 	this->tile = tile;
 	this->count = count;
 	this->targetTile = targetTile;
-	this->aux = aux;
+	this->aux = aux; //default to 0, which is the main block
 }
 
 OreFeature::OreFeature(int tile, int count)
@@ -22,7 +22,7 @@ OreFeature::OreFeature(int tile, int count, int targetTile)
 }
 
 // Nuevo constructor para permitir especificar el valor 'aux'
-OreFeature::OreFeature(int tile, int count, int targetTile, int aux)
+OreFeature::OreFeature(int tile, int count, int targetTile, int aux) //you can use Tile::stone_Id for targetTile
 {
 	_init(tile, count, targetTile, aux);
 }
@@ -141,7 +141,7 @@ bool OreFeature::place(Level *level, Random *random, int x, int y, int z)
 							{
                                 if ( level->getTile(x2, y2, z2) == targetTile)
 								{									
-									level->setTileAndData(x2, y2, z2, tile, this->aux, Tile::UPDATE_INVISIBLE_NO_LIGHT); // Usar this->aux
+									level->setTileAndData(x2, y2, z2, tile, this->aux, Tile::UPDATE_INVISIBLE_NO_LIGHT); // Use this->aux to get the block type
 								}
                             }
                         }
