@@ -3,21 +3,28 @@
 #include "net.minecraft.world.level.tile.h"
 #include "OreFeature.h"
 
-void OreFeature::_init(int tile, int count, int targetTile)
+void OreFeature::_init(int tile, int count, int targetTile, int aux)
 {
 	this->tile = tile;
 	this->count = count;
 	this->targetTile = targetTile;
+	this->aux = aux;
 }
 
 OreFeature::OreFeature(int tile, int count)
 {
-	_init(tile, count, Tile::stone_Id);
+	_init(tile, count, Tile::stone_Id, 0);
 }
 
 OreFeature::OreFeature(int tile, int count, int targetTile)
 {
-	_init(tile, count, targetTile);
+	_init(tile, count, targetTile, 0);
+}
+
+// Nuevo constructor para permitir especificar el valor 'aux'
+OreFeature::OreFeature(int tile, int count, int targetTile, int aux)
+{
+	_init(tile, count, targetTile, aux);
 }
 
 bool OreFeature::place(Level *level, Random *random, int x, int y, int z)
@@ -134,7 +141,7 @@ bool OreFeature::place(Level *level, Random *random, int x, int y, int z)
 							{
                                 if ( level->getTile(x2, y2, z2) == targetTile)
 								{									
-									level->setTileAndData(x2, y2, z2, tile, 0, Tile::UPDATE_INVISIBLE_NO_LIGHT);
+									level->setTileAndData(x2, y2, z2, tile, this->aux, Tile::UPDATE_INVISIBLE_NO_LIGHT); // Usar this->aux
 								}
                             }
                         }
