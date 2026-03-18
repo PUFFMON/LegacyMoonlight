@@ -29,10 +29,18 @@ void IUIScene_CreativeMenu::staticCtor()
 
 	// Building Blocks
 	DEF(eCreativeInventory_BuildingBlocks)
+		ITEM(Tile::cobblestone_Id)
 		ITEM(Tile::stone_Id)
+		ITEM_AUX(Tile::stoneDecorative_Id,StoneDecorativeTile::TYPE_SMOOTH_STONE)
+		ITEM_AUX(Tile::stoneDecorative_Id,StoneDecorativeTile::TYPE_ANDESITE)
+		ITEM_AUX(Tile::stoneDecorative_Id,StoneDecorativeTile::TYPE_POLISHED_ANDESITE)
+		ITEM_AUX(Tile::stoneDecorative_Id,StoneDecorativeTile::TYPE_DIORITE)
+		ITEM_AUX(Tile::stoneDecorative_Id,StoneDecorativeTile::TYPE_POLISHED_DIORITE)
+		ITEM_AUX(Tile::stoneDecorative_Id,StoneDecorativeTile::TYPE_GRANITE)
+		ITEM_AUX(Tile::stoneDecorative_Id,StoneDecorativeTile::TYPE_POLISHED_GRANITE)
 		ITEM(Tile::grass_Id)
 		ITEM(Tile::dirt_Id)
-		ITEM(Tile::cobblestone_Id)
+		ITEM(Tile::farmland_Id);
 		ITEM(Tile::sand_Id)
 		ITEM(Tile::sandStone_Id)
 		ITEM_AUX(Tile::sandStone_Id, SandStoneTile::TYPE_SMOOTHSIDE)
@@ -44,6 +52,8 @@ void IUIScene_CreativeMenu::staticCtor()
 		ITEM(Tile::diamondBlock_Id)
 		ITEM(Tile::emeraldBlock_Id)
 		ITEM_AUX(Tile::quartzBlock_Id,QuartzBlockTile::TYPE_DEFAULT)
+		ITEM_AUX(Tile::quartzBlock_Id,QuartzBlockTile::TYPE_CHISELED)
+		ITEM_AUX(Tile::quartzBlock_Id,QuartzBlockTile::TYPE_LINES_Y)
 		ITEM(Tile::coalOre_Id)
 		ITEM(Tile::lapisOre_Id)
 		ITEM(Tile::diamondOre_Id)
@@ -76,22 +86,18 @@ void IUIScene_CreativeMenu::staticCtor()
 		ITEM(Tile::ironFence_Id)
 		ITEM_AUX(Tile::cobbleWall_Id, WallTile::TYPE_NORMAL)
 		ITEM_AUX(Tile::cobbleWall_Id, WallTile::TYPE_MOSSY)
+		ITEM_AUX(Tile::cobbleWall_Id, WallTile::TYPE_ANDESITE)
+		ITEM_AUX(Tile::cobbleWall_Id, WallTile::TYPE_DIORITE)
+		ITEM_AUX(Tile::cobbleWall_Id, WallTile::TYPE_GRANITE)
+		ITEM_AUX(Tile::cobbleWall_Id, WallTile::TYPE_SANDSTONE)
+		ITEM_AUX(Tile::cobbleWall_Id, WallTile::TYPE_SMOOTH_SANDSTONE)
 		ITEM_AUX(Tile::stoneBrick_Id,SmoothStoneBrickTile::TYPE_DEFAULT)
 		ITEM_AUX(Tile::stoneBrick_Id,SmoothStoneBrickTile::TYPE_MOSSY)
 		ITEM_AUX(Tile::stoneBrick_Id,SmoothStoneBrickTile::TYPE_CRACKED)
 		ITEM_AUX(Tile::stoneBrick_Id,SmoothStoneBrickTile::TYPE_DETAIL)
-		ITEM_AUX(Tile::monsterStoneEgg_Id,StoneMonsterTile::HOST_ROCK)
-		ITEM_AUX(Tile::monsterStoneEgg_Id,StoneMonsterTile::HOST_COBBLE)
-		ITEM_AUX(Tile::monsterStoneEgg_Id,StoneMonsterTile::HOST_STONEBRICK)
 		ITEM(Tile::mycel_Id)
 		ITEM(Tile::netherBrick_Id)
 		ITEM(Tile::endStone_Id)
-		ITEM_AUX(Tile::quartzBlock_Id,QuartzBlockTile::TYPE_CHISELED)
-		ITEM_AUX(Tile::quartzBlock_Id,QuartzBlockTile::TYPE_LINES_Y)
-		ITEM(Tile::trapdoor_Id)
-		ITEM(Tile::fenceGate_Id)
-		ITEM(Item::door_wood_Id)
-		ITEM(Item::door_iron_Id)
 		ITEM_AUX(Tile::stoneSlabHalf_Id,StoneSlabTile::STONE_SLAB)
 		ITEM_AUX(Tile::stoneSlabHalf_Id,StoneSlabTile::SAND_SLAB)
 		// AP - changed oak slab to be wood because it wouldn't burn
@@ -116,6 +122,23 @@ void IUIScene_CreativeMenu::staticCtor()
 		ITEM(Tile::stairs_sandstone_Id)
 		ITEM(Tile::stairs_quartz_Id)
 
+		ITEM_AUX(Tile::wool_Id,14)	// Red
+		ITEM_AUX(Tile::wool_Id,1)	// Orange
+		ITEM_AUX(Tile::wool_Id,4)	// Yellow
+		ITEM_AUX(Tile::wool_Id,5)	// Lime
+		ITEM_AUX(Tile::wool_Id,3)	// Light Blue
+		ITEM_AUX(Tile::wool_Id,9)	// Cyan
+		ITEM_AUX(Tile::wool_Id,11)	// Blue
+		ITEM_AUX(Tile::wool_Id,10)	// Purple
+		ITEM_AUX(Tile::wool_Id,2)	// Magenta
+		ITEM_AUX(Tile::wool_Id,6)	// Pink
+		ITEM_AUX(Tile::wool_Id,0)	// White
+		ITEM_AUX(Tile::wool_Id,8)	// Light Gray
+		ITEM_AUX(Tile::wool_Id,7)	// Gray
+		ITEM_AUX(Tile::wool_Id,15)	// Black
+		ITEM_AUX(Tile::wool_Id,13)	// Green
+		ITEM_AUX(Tile::wool_Id,12)	// Brown
+
 		ITEM(Tile::clayHardened_Id)
 		ITEM_AUX(Tile::clayHardened_colored_Id,14)	// Red
 		ITEM_AUX(Tile::clayHardened_colored_Id,1)	// Orange
@@ -134,82 +157,7 @@ void IUIScene_CreativeMenu::staticCtor()
 		ITEM_AUX(Tile::clayHardened_colored_Id,13)	// Green
 		ITEM_AUX(Tile::clayHardened_colored_Id,12)	// Brown
 
-	// Decoration
-	DEF(eCreativeInventory_Decoration)
-		ITEM_AUX(Item::skull_Id,SkullTileEntity::TYPE_SKELETON)
-		ITEM_AUX(Item::skull_Id,SkullTileEntity::TYPE_WITHER)
-		ITEM_AUX(Item::skull_Id,SkullTileEntity::TYPE_ZOMBIE)
-		ITEM_AUX(Item::skull_Id,SkullTileEntity::TYPE_CHAR)
-		ITEM_AUX(Item::skull_Id,SkullTileEntity::TYPE_CREEPER)
-		ITEM(Tile::sponge_Id)
-		ITEM(Tile::melon_Id)
-		ITEM(Tile::pumpkin_Id)
-		ITEM(Tile::litPumpkin_Id)
-		ITEM_AUX(Tile::sapling_Id, Sapling::TYPE_DEFAULT)
-		ITEM_AUX(Tile::sapling_Id, Sapling::TYPE_EVERGREEN)
-		ITEM_AUX(Tile::sapling_Id, Sapling::TYPE_BIRCH)
-		ITEM_AUX(Tile::sapling_Id, Sapling::TYPE_JUNGLE)
-		ITEM_AUX(Tile::leaves_Id, LeafTile::NORMAL_LEAF)
-		ITEM_AUX(Tile::leaves_Id, LeafTile::EVERGREEN_LEAF)
-		ITEM_AUX(Tile::leaves_Id, LeafTile::BIRCH_LEAF)
-		ITEM_AUX(Tile::leaves_Id, LeafTile::JUNGLE_LEAF)
-		ITEM(Tile::vine)
-		ITEM(Tile::waterLily_Id)
-		ITEM(Tile::torch_Id)
-		ITEM_AUX(Tile::tallgrass_Id, TallGrass::DEAD_SHRUB)
-		ITEM_AUX(Tile::tallgrass_Id, TallGrass::TALL_GRASS)
-		ITEM_AUX(Tile::tallgrass_Id, TallGrass::FERN)
-		ITEM(Tile::deadBush_Id)
-		ITEM(Tile::flower_Id)
-		ITEM(Tile::rose_Id)
-		ITEM(Tile::mushroom_brown_Id)
-		ITEM(Tile::mushroom_red_Id)
-		ITEM(Tile::cactus_Id)
-		ITEM(Tile::topSnow_Id)
-		// 4J-PB - Already got sugar cane in Materials ITEM_11(Tile::reeds_Id)
-		ITEM(Tile::web_Id)
-		ITEM(Tile::thinGlass_Id)
 		ITEM(Tile::glass_Id)
-		ITEM(Item::painting_Id)
-		ITEM(Item::itemFrame_Id)
-		ITEM(Item::sign_Id)
-		ITEM(Tile::bookshelf_Id)
-		ITEM(Item::flowerPot_Id)
-		ITEM(Tile::hayBlock_Id)
-		ITEM_AUX(Tile::wool_Id,14)	// Red
-		ITEM_AUX(Tile::wool_Id,1)	// Orange
-		ITEM_AUX(Tile::wool_Id,4)	// Yellow
-		ITEM_AUX(Tile::wool_Id,5)	// Lime
-		ITEM_AUX(Tile::wool_Id,3)	// Light Blue
-		ITEM_AUX(Tile::wool_Id,9)	// Cyan
-		ITEM_AUX(Tile::wool_Id,11)	// Blue
-		ITEM_AUX(Tile::wool_Id,10)	// Purple
-		ITEM_AUX(Tile::wool_Id,2)	// Magenta
-		ITEM_AUX(Tile::wool_Id,6)	// Pink
-		ITEM_AUX(Tile::wool_Id,0)	// White
-		ITEM_AUX(Tile::wool_Id,8)	// Light Gray
-		ITEM_AUX(Tile::wool_Id,7)	// Gray
-		ITEM_AUX(Tile::wool_Id,15)	// Black
-		ITEM_AUX(Tile::wool_Id,13)	// Green
-		ITEM_AUX(Tile::wool_Id,12)	// Brown
-
-		ITEM_AUX(Tile::woolCarpet_Id,14)	// Red
-		ITEM_AUX(Tile::woolCarpet_Id,1)	// Orange
-		ITEM_AUX(Tile::woolCarpet_Id,4)	// Yellow
-		ITEM_AUX(Tile::woolCarpet_Id,5)	// Lime
-		ITEM_AUX(Tile::woolCarpet_Id,3)	// Light Blue
-		ITEM_AUX(Tile::woolCarpet_Id,9)	// Cyan
-		ITEM_AUX(Tile::woolCarpet_Id,11)	// Blue
-		ITEM_AUX(Tile::woolCarpet_Id,10)	// Purple
-		ITEM_AUX(Tile::woolCarpet_Id,2)	// Magenta
-		ITEM_AUX(Tile::woolCarpet_Id,6)	// Pink
-		ITEM_AUX(Tile::woolCarpet_Id,0)	// White
-		ITEM_AUX(Tile::woolCarpet_Id,8)	// Light Gray
-		ITEM_AUX(Tile::woolCarpet_Id,7)	// Gray
-		ITEM_AUX(Tile::woolCarpet_Id,15)	// Black
-		ITEM_AUX(Tile::woolCarpet_Id,13)	// Green
-		ITEM_AUX(Tile::woolCarpet_Id,12)	// Brown
-
 		ITEM_AUX(Tile::stained_glass_Id,14)	// Red
 		ITEM_AUX(Tile::stained_glass_Id,1)	// Orange
 		ITEM_AUX(Tile::stained_glass_Id,4)	// Yellow
@@ -227,6 +175,7 @@ void IUIScene_CreativeMenu::staticCtor()
 		ITEM_AUX(Tile::stained_glass_Id,13)	// Green
 		ITEM_AUX(Tile::stained_glass_Id,12)	// Brown
 
+		ITEM(Tile::thinGlass_Id)
 		ITEM_AUX(Tile::stained_glass_pane_Id,14)	// Red
 		ITEM_AUX(Tile::stained_glass_pane_Id,1)	// Orange
 		ITEM_AUX(Tile::stained_glass_pane_Id,4)	// Yellow
@@ -243,6 +192,96 @@ void IUIScene_CreativeMenu::staticCtor()
 		ITEM_AUX(Tile::stained_glass_pane_Id,15)	// Black
 		ITEM_AUX(Tile::stained_glass_pane_Id,13)	// Green
 		ITEM_AUX(Tile::stained_glass_pane_Id,12)	// Brown
+
+	// Decoration
+	DEF(eCreativeInventory_Decoration)
+		ITEM_AUX(Item::skull_Id,SkullTileEntity::TYPE_SKELETON)
+		ITEM_AUX(Item::skull_Id,SkullTileEntity::TYPE_WITHER)
+		ITEM_AUX(Item::skull_Id,SkullTileEntity::TYPE_ZOMBIE)
+		ITEM_AUX(Item::skull_Id,SkullTileEntity::TYPE_CHAR)
+		ITEM_AUX(Item::skull_Id,SkullTileEntity::TYPE_CREEPER)
+		ITEM(Tile::melon_Id)
+		ITEM(Tile::pumpkin_Id)
+		ITEM(Tile::litPumpkin_Id)
+		ITEM_AUX(Tile::sapling_Id, Sapling::TYPE_DEFAULT)
+		ITEM_AUX(Tile::sapling_Id, Sapling::TYPE_EVERGREEN)
+		ITEM_AUX(Tile::sapling_Id, Sapling::TYPE_BIRCH)
+		ITEM_AUX(Tile::sapling_Id, Sapling::TYPE_JUNGLE)
+		ITEM_AUX(Tile::leaves_Id, LeafTile::NORMAL_LEAF)
+		ITEM_AUX(Tile::leaves_Id, LeafTile::EVERGREEN_LEAF)
+		ITEM_AUX(Tile::leaves_Id, LeafTile::BIRCH_LEAF)
+		ITEM_AUX(Tile::leaves_Id, LeafTile::JUNGLE_LEAF)
+		ITEM(Tile::vine)
+		ITEM(Tile::waterLily_Id)
+		ITEM_AUX(Tile::tallgrass_Id, TallGrass::DEAD_SHRUB) // replace this
+		ITEM_AUX(Tile::tallgrass_Id, TallGrass::TALL_GRASS)
+		ITEM_AUX(Tile::tallgrass_Id, TallGrass::FERN)
+		ITEM(Tile::deadBush_Id)
+		ITEM(Tile::flower_Id)
+		ITEM(Tile::rose_Id)
+		ITEM(Tile::mushroom_brown_Id)
+		ITEM(Tile::mushroom_red_Id)
+		ITEM(Tile::cactus_Id)
+		ITEM(Item::reeds_Id)
+		ITEM(Tile::farmland_Id);
+		ITEM(Item::seeds_wheat_Id)
+		ITEM(Item::seeds_melon_Id)
+		ITEM(Item::seeds_pumpkin_Id)
+		ITEM_AUX(Item::dye_powder_Id,3)		// cocoa beans
+		ITEM(Item::netherwart_seeds_Id)
+
+		ITEM(Tile::topSnow_Id)
+		// 4J-PB - Already got sugar cane in Materials ITEM_11(Tile::reeds_Id)
+		ITEM(Tile::web_Id)
+		
+		ITEM(Item::painting_Id)
+		ITEM(Item::itemFrame_Id)
+		ITEM(Item::sign_Id)
+		ITEM(Tile::ladder_Id)
+		ITEM(Tile::bookshelf_Id)
+		ITEM(Item::flowerPot_Id)
+		ITEM(Tile::torch_Id)
+		ITEM(Tile::hayBlock_Id)
+		ITEM(Tile::sponge_Id)
+
+		ITEM(Item::door_wood_Id)
+		ITEM(Item::door_iron_Id)
+		ITEM(Tile::trapdoor_Id)
+		ITEM(Tile::fenceGate_Id)
+
+		ITEM(Tile::chest_Id)
+		ITEM(Tile::enderChest_Id)
+		ITEM(Tile::workBench_Id)
+		ITEM(Tile::furnace_Id)
+		ITEM(Item::brewingStand_Id)
+		ITEM(Item::cauldron_Id)
+		ITEM(Tile::enchantTable_Id)
+		ITEM(Tile::anvil_Id);
+		ITEM(Tile::beacon_Id)
+		ITEM(Tile::endPortalFrameTile_Id)
+		ITEM(Tile::noteblock_Id)
+		ITEM(Tile::jukebox_Id)
+
+		
+
+		ITEM(Item::bed_Id)
+
+		ITEM_AUX(Tile::woolCarpet_Id,14)	// Red
+		ITEM_AUX(Tile::woolCarpet_Id,1)	// Orange
+		ITEM_AUX(Tile::woolCarpet_Id,4)	// Yellow
+		ITEM_AUX(Tile::woolCarpet_Id,5)	// Lime
+		ITEM_AUX(Tile::woolCarpet_Id,3)	// Light Blue
+		ITEM_AUX(Tile::woolCarpet_Id,9)	// Cyan
+		ITEM_AUX(Tile::woolCarpet_Id,11)	// Blue
+		ITEM_AUX(Tile::woolCarpet_Id,10)	// Purple
+		ITEM_AUX(Tile::woolCarpet_Id,2)	// Magenta
+		ITEM_AUX(Tile::woolCarpet_Id,6)	// Pink
+		ITEM_AUX(Tile::woolCarpet_Id,0)	// White
+		ITEM_AUX(Tile::woolCarpet_Id,8)	// Light Gray
+		ITEM_AUX(Tile::woolCarpet_Id,7)	// Gray
+		ITEM_AUX(Tile::woolCarpet_Id,15)	// Black
+		ITEM_AUX(Tile::woolCarpet_Id,13)	// Green
+		ITEM_AUX(Tile::woolCarpet_Id,12)	// Brown
 
 #ifndef _CONTENT_PACKAGE
 	DEF(eCreativeInventory_ArtToolsDecorations)
@@ -269,28 +308,39 @@ void IUIScene_CreativeMenu::staticCtor()
 	// Redstone
 	DEF(eCreativeInventory_Redstone)
 		ITEM(Tile::dispenser_Id)
+		ITEM(Tile::dropper_Id)
+		ITEM(Tile::hopper_Id)
 		ITEM(Tile::noteblock_Id)
+		ITEM(Tile::redstoneLight_Id)
 		ITEM(Tile::pistonBase_Id)
 		ITEM(Tile::pistonStickyBase_Id)
+		ITEM(Item::door_wood_Id)
+		ITEM(Item::door_iron_Id)
+		ITEM(Tile::trapdoor_Id)
+		ITEM(Tile::fenceGate_Id)
 		ITEM(Tile::tnt_Id)
+
+		//generators
 		ITEM(Tile::lever_Id)
 		ITEM(Tile::button_stone_Id)
 		ITEM(Tile::button_wood_Id)
 		ITEM(Tile::pressurePlate_stone_Id)
 		ITEM(Tile::pressurePlate_wood_Id)
-		ITEM(Item::redStone_Id)
-		ITEM(Tile::redstoneBlock_Id)
-		ITEM(Tile::redstoneTorch_on_Id)
-		ITEM(Item::repeater_Id)
-		ITEM(Tile::redstoneLight_Id)
-		ITEM(Tile::tripWireSource_Id)
-		ITEM(Tile::daylightDetector_Id)
-		ITEM(Tile::dropper_Id)
-		ITEM(Tile::hopper_Id)
-		ITEM(Item::comparator_Id)
-		ITEM(Tile::chest_trap_Id)
 		ITEM(Tile::weightedPlate_heavy_Id)
 		ITEM(Tile::weightedPlate_light_Id)
+		ITEM(Tile::tripWireSource_Id)
+		ITEM(Item::string_Id)
+		ITEM(Tile::chest_trap_Id)
+		ITEM(Tile::daylightDetector_Id)
+
+		ITEM(Tile::redstoneBlock_Id)
+		ITEM(Tile::redstoneTorch_on_Id)
+		ITEM(Tile::redstoneTorch_off_Id)
+
+		//logic
+		ITEM(Item::redStone_Id)
+		ITEM(Item::repeater_Id)
+		ITEM(Item::comparator_Id)
 
 	// Transport
 	DEF(eCreativeInventory_Transport)
@@ -309,29 +359,6 @@ void IUIScene_CreativeMenu::staticCtor()
 
 	// Miscellaneous
 	DEF(eCreativeInventory_Misc)
-		ITEM(Tile::chest_Id)
-		ITEM(Tile::enderChest_Id)
-		ITEM(Tile::workBench_Id)
-		ITEM(Tile::furnace_Id)
-		ITEM(Item::brewingStand_Id)
-		ITEM(Tile::enchantTable_Id)
-		ITEM(Tile::beacon_Id)
-		ITEM(Tile::endPortalFrameTile_Id)
-		ITEM(Tile::jukebox_Id)
-		ITEM(Tile::anvil_Id);
-		ITEM(Item::bed_Id)
-		ITEM(Item::bucket_empty_Id)
-		ITEM(Item::bucket_lava_Id)
-		ITEM(Item::bucket_water_Id)
-		ITEM(Item::bucket_milk_Id)
-		ITEM(Item::cauldron_Id)
-		ITEM(Item::snowBall_Id)
-		ITEM(Item::paper_Id)
-		ITEM(Item::book_Id)
-		ITEM(Item::enderPearl_Id)
-		ITEM(Item::eyeOfEnder_Id)
-		ITEM(Item::nameTag_Id)
-		ITEM(Item::netherStar_Id)
 		ITEM_AUX(Item::spawnEgg_Id, 50); // Creeper
 		ITEM_AUX(Item::spawnEgg_Id, 51); // Skeleton
 		ITEM_AUX(Item::spawnEgg_Id, 52); // Spider
@@ -358,6 +385,11 @@ void IUIScene_CreativeMenu::staticCtor()
 		ITEM_AUX(Item::spawnEgg_Id, 100 | ((EntityHorse::TYPE_DONKEY + 1) << 12) ); // Donkey
 		ITEM_AUX(Item::spawnEgg_Id, 100 | ((EntityHorse::TYPE_MULE + 1) << 12)); // Mule
 		ITEM_AUX(Item::spawnEgg_Id, 120); // Villager
+
+		ITEM_AUX(Tile::monsterStoneEgg_Id,StoneMonsterTile::HOST_ROCK)
+		ITEM_AUX(Tile::monsterStoneEgg_Id,StoneMonsterTile::HOST_COBBLE)
+		ITEM_AUX(Tile::monsterStoneEgg_Id,StoneMonsterTile::HOST_STONEBRICK)
+
 		ITEM(Item::record_01_Id)
 		ITEM(Item::record_02_Id)
 		ITEM(Item::record_03_Id)
@@ -417,6 +449,8 @@ void IUIScene_CreativeMenu::staticCtor()
 		ITEM(Item::carrots_Id)
 		ITEM(Item::carrotGolden_Id)
 		ITEM(Item::pumpkinPie_Id)
+		ITEM(Item::bucket_milk_Id)
+		ITEM_AUX(Item::potion_Id,0) // Water bottle
 
 	// Tools, Armour and Weapons (Complete)
 	DEF(eCreativeInventory_ToolsArmourWeapons)
@@ -475,6 +509,8 @@ void IUIScene_CreativeMenu::staticCtor()
 		ITEM(Item::hatchet_diamond_Id)
 		ITEM(Item::hoe_diamond_Id)
 
+		ITEM(Item::expBottle_Id)
+
 		ITEM(Item::fireball_Id)
 		ITEM(Item::clock_Id)
 		ITEM(Item::shears_Id)
@@ -484,6 +520,16 @@ void IUIScene_CreativeMenu::staticCtor()
 		ITEM(Item::horseArmorDiamond_Id)
 		ITEM(Item::horseArmorGold_Id)
 		ITEM(Item::horseArmorMetal_Id)
+		ITEM(Item::glassBottle_Id)
+		ITEM(Item::bowl_Id)
+		ITEM(Item::bucket_empty_Id)
+		ITEM(Item::bucket_lava_Id)
+		ITEM(Item::bucket_water_Id)
+		ITEM(Item::enderPearl_Id)
+		ITEM(Item::eyeOfEnder_Id)
+		ITEM(Item::nameTag_Id)
+		ITEM(Item::snowBall_Id)
+		ITEM(Item::egg_Id)
 
 		for(unsigned int i = 0; i < Enchantment::enchantments.length; ++i)
 		{
@@ -510,11 +556,11 @@ void IUIScene_CreativeMenu::staticCtor()
 		ITEM(Item::emerald_Id)
 		ITEM(Item::ironIngot_Id)
 		ITEM(Item::goldIngot_Id)
+		ITEM(Item::goldNugget_Id)
 		ITEM(Item::netherQuartz_Id)
 		ITEM(Item::brick_Id)
 		ITEM(Item::netherbrick_Id)
 		ITEM(Item::stick_Id)
-		ITEM(Item::bowl_Id)
 		ITEM(Item::bone_Id)
 		ITEM(Item::string_Id)
 		ITEM(Item::feather_Id)
@@ -523,17 +569,18 @@ void IUIScene_CreativeMenu::staticCtor()
 		ITEM(Item::gunpowder_Id)
 		ITEM(Item::clay_Id)
 		ITEM(Item::yellowDust_Id)
-		ITEM(Item::seeds_wheat_Id)
-		ITEM(Item::seeds_melon_Id)
-		ITEM(Item::seeds_pumpkin_Id)
 		ITEM(Item::wheat_Id)
-		ITEM(Item::reeds_Id)
-		ITEM(Item::egg_Id)
 		ITEM(Item::sugar_Id)
 		ITEM(Item::slimeBall_Id)
 		ITEM(Item::blazeRod_Id)
-		ITEM(Item::goldNugget_Id)
-		ITEM(Item::netherwart_seeds_Id)
+		ITEM(Item::blazePowder_Id)
+		ITEM(Item::ghastTear_Id)
+		ITEM(Item::fermentedSpiderEye_Id)
+		ITEM(Item::magmaCream_Id)
+		ITEM(Item::speckledMelon_Id)
+		ITEM(Item::paper_Id)
+		ITEM(Item::book_Id)
+		ITEM(Item::netherStar_Id)
 		ITEM_AUX(Item::dye_powder_Id,1)		// Red
 		ITEM_AUX(Item::dye_powder_Id,14)	// Orange
 		ITEM_AUX(Item::dye_powder_Id,11)	// Yellow
@@ -553,15 +600,10 @@ void IUIScene_CreativeMenu::staticCtor()
 
 		// Brewing (TODO)
 		DEF(eCreativeInventory_Brewing)
-		ITEM(Item::expBottle_Id)
+		ITEM(Item::bucket_milk_Id)
 
 		// 4J Stu - Anything else added here also needs to be added to the key handler below
-		ITEM(Item::ghastTear_Id)
-		ITEM(Item::fermentedSpiderEye_Id)
-		ITEM(Item::blazePowder_Id)
-		ITEM(Item::magmaCream_Id)
-		ITEM(Item::speckledMelon_Id)
-		ITEM(Item::glassBottle_Id)
+
 		ITEM_AUX(Item::potion_Id,0) // Water bottle
 		//ITEM_AUX(Item::potion_Id,MACRO_MAKEPOTION_AUXVAL(0, 0, MASK_TYPE_AWKWARD)) // Awkward Potion
 
