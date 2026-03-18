@@ -922,12 +922,12 @@ void PreStitchedTextureMap::loadUVs()
 		ADD_ICON(16,	0,	L"coal_block");
 		ADD_ICON(16,	1,	L"hardened_clay");
 		ADD_ICON(16,	2,	L"noteblock");
-		//ADD_ICON(16,	3,	L"unused");
-		//ADD_ICON(16,	4,	L"unused");
-		//ADD_ICON(16,	5,	L"unused");
-		//ADD_ICON(16,	6,	L"unused");
-		//ADD_ICON(16,	7,	L"unused");
-		//ADD_ICON(16,	8,	L"unused");
+		ADD_ICON(16,	3,	L"andesite");
+		ADD_ICON(16,	4,	L"diorite");
+		ADD_ICON(16,	5,	L"granite");
+		ADD_ICON(16,	6,	L"andesite_polished");
+		ADD_ICON(16,	7,	L"diorite_polished");
+		ADD_ICON(16,	8,	L"granite_polished");
 		ADD_ICON(16,	9,	L"potatoes_stage_0");
 		ADD_ICON(16,	10,	L"potatoes_stage_1");
 		ADD_ICON(16,	11,	L"potatoes_stage_2");

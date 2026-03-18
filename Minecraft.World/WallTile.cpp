@@ -11,8 +11,8 @@ const float WallTile::WALL_HEIGHT = 13.0f / 16.0f;
 const float WallTile::POST_WIDTH = 4.0f / 16.0f;
 const float WallTile::POST_HEIGHT = 16.0f / 16.0f;
 
-const unsigned int WallTile::COBBLE_NAMES[2] = { IDS_TILE_COBBLESTONE_WALL,
-	IDS_TILE_COBBLESTONE_WALL_MOSSY,
+const unsigned int WallTile::COBBLE_NAMES[7] = { IDS_TILE_COBBLESTONE_WALL,
+	IDS_TILE_COBBLESTONE_WALL_MOSSY, IDS_TILE_SANDSTONE_WALL, IDS_TILE_SMOOTH_SANDSTONE_WALL, IDS_TILE_ANDESITE_WALL, IDS_TILE_DIORITE_WALL, IDS_TILE_GRANITE_WALL
 };
 
 WallTile::WallTile(int id, Tile *baseTile) : Tile(id, baseTile->material, isSolidRender())
@@ -28,8 +28,29 @@ Icon *WallTile::getTexture(int face, int data)
 	{
 		return Tile::mossyCobblestone->getTexture(face);
 	}
+		if (data == TYPE_SANDSTONE)
+	{
+		return Tile::sandStone->getTexture(face, 0);
+	}
+	if (data == TYPE_SMOOTH_SANDSTONE)
+	{
+		return Tile::sandStone->getTexture(face, 2);
+	}
+	if (data == TYPE_ANDESITE)
+	{
+		return Tile::stoneDecorative->getTexture(face, 0);
+	}
+	if (data == TYPE_DIORITE)
+	{
+		return Tile::stoneDecorative->getTexture(face, 2);
+	}
+	if (data == TYPE_GRANITE)
+	{
+		return Tile::stoneDecorative->getTexture(face, 4);
+	}
 	return Tile::cobblestone->getTexture(face);
 }
+
 
 int WallTile::getRenderShape()
 {

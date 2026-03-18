@@ -12,8 +12,13 @@ public:
 
 	static const int TYPE_NORMAL = 0;
 	static const int TYPE_MOSSY = 1;
+	static const int TYPE_SANDSTONE = 2;
+	static const int TYPE_SMOOTH_SANDSTONE = 3;
+	static const int TYPE_ANDESITE = 4;
+	static const int TYPE_DIORITE = 5;
+	static const int TYPE_GRANITE = 6;
 
-	static const unsigned int COBBLE_NAMES[2];
+	static const unsigned int COBBLE_NAMES[7];
 
 	WallTile(int id, Tile *baseTile);
 
