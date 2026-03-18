@@ -33,6 +33,9 @@ protected:
 	Feature *gravelFeature;
 	Feature *dirtOreFeature;
 	Feature *gravelOreFeature;
+	Feature *andesiteOreFeature;
+	Feature *dioriteOreFeature;
+	Feature *graniteOreFeature;
 	Feature *coalOreFeature;
 	Feature *ironOreFeature;
 	Feature *goldOreFeature;

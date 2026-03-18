@@ -8953,10 +8953,10 @@
 
 	<data name="IDS_TOOLTIPS_CURE">
 		<value>Cure</value>
-	</data>	
+	</data>
 	<data name="IDS_WINDOWS_EXIT">
 		<value>Exit Minecraft</value>
-	</data>	
+	</data>
 
 	<data name="IDS_TILE_ANDESITE">
 		<value>Andesite</value>

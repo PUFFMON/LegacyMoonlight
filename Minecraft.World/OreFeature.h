@@ -14,9 +14,7 @@ private:
 	void _init(int tile, int count, int targetTile, int aux);
 public:
 	OreFeature (int tile, int count);
-	OreFeature(int tile, int count, int targetTile);
-	OreFeature(int tile, int count, int targetTile, int aux); //added to the big constructor to avoid weird interactions as other variables
-
+	OreFeature(int tile, int count, int targetTile, int aux);
 
 	virtual bool place(Level *level, Random *random, int x, int y, int z);
 };

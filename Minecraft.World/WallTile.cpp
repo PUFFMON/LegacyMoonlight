@@ -28,7 +28,7 @@ Icon *WallTile::getTexture(int face, int data)
 	{
 		return Tile::mossyCobblestone->getTexture(face);
 	}
-	if (data == TYPE_SANDSTONE)
+		if (data == TYPE_SANDSTONE)
 	{
 		return Tile::sandStone->getTexture(face, 0);
 	}
@@ -50,6 +50,7 @@ Icon *WallTile::getTexture(int face, int data)
 	}
 	return Tile::cobblestone->getTexture(face);
 }
+
 
 int WallTile::getRenderShape()
 {

@@ -26,6 +26,5 @@ If your PR includes any undocumented changes it will be closed.
 
 # Use of AI and LLMs
 Please, use as little of AI as possible in your code. LLMs will hardly understand the code structure and will suggest incorrect or unoptimized changes. If your PR includes unrevised AI code it will be closed or your code will be rewritten by someone else.
-
 # Pull Request Template
 We request that all PRs made for this repo use our PR template to the fullest extent possible. Completely wiping it out to write minimal information will likely get your PR closed.
