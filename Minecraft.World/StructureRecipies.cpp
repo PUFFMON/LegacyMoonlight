@@ -31,6 +31,49 @@ void StructureRecipies::addRecipes(Recipes *r)
 		L'#', new ItemInstance(Tile::stoneSlabHalf, 1, StoneSlabTile::SAND_SLAB),
 		L'S');
 
+	r->addShapedRecipy(new ItemInstance(Tile::stoneDecorative, 2, 2), 
+        L"sscictg",
+        L"#X", 
+        L"X#", 
+        L'X', Item::netherQuartz, 
+        L'#', Tile::cobblestone,
+        L'S');
+
+	r->addShapedRecipy(new ItemInstance(Tile::stoneDecorative, 2, 0), 
+        L"sctczg",
+        L"#X", 
+        L'X', Tile::cobblestone,
+        L'#', new ItemInstance(Tile::stoneDecorative, 1, 2),
+        L'S');
+
+	r->addShapedRecipy(new ItemInstance(Tile::stoneDecorative, 2, 4), 
+        L"sciczg",
+        L"#X", 
+        L'X', Item::netherQuartz,
+        L'#', new ItemInstance(Tile::stoneDecorative, 1, 2),
+        L'S');
+
+	r->addShapedRecipy(new ItemInstance(Tile::stoneDecorative, 2, 3), 
+        L"ssczg",
+        L"##", 
+		L"##", 
+        L'#', new ItemInstance(Tile::stoneDecorative, 1, 2),
+        L'S');
+
+	r->addShapedRecipy(new ItemInstance(Tile::stoneDecorative, 2, 1), 
+        L"ssczg",
+        L"##", 
+		L"##", 
+        L'#', new ItemInstance(Tile::stoneDecorative, 1, 0),
+        L'S');
+
+	r->addShapedRecipy(new ItemInstance(Tile::stoneDecorative, 2, 5), 
+        L"ssczg",
+        L"##", 
+		L"##", 
+        L'#', new ItemInstance(Tile::stoneDecorative, 1, 4),
+        L'S');
+
 	r->addShapedRecipy(new ItemInstance(Tile::quartzBlock, 1, QuartzBlockTile::TYPE_CHISELED), //
 		L"ssczg",
 		L"#", //

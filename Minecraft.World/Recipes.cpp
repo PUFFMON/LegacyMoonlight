@@ -178,6 +178,46 @@ Recipes::Recipes()
 		L'#', Tile::mossyCobblestone,
 		L'S');
 
+	addShapedRecipy(new ItemInstance(Tile::cobbleWall, 6, WallTile::TYPE_SANDSTONE), //
+		L"ssczg",
+		L"###", //
+		L"###", //
+
+		L'#', new ItemInstance(Tile::sandStone),
+		L'S');
+
+	addShapedRecipy(new ItemInstance(Tile::cobbleWall, 6, WallTile::TYPE_SMOOTH_SANDSTONE), //
+		L"ssczg",
+		L"###", //
+		L"###", //
+
+		L'#', new ItemInstance(Tile::sandStone, 1, 2),
+		L'S');
+
+	addShapedRecipy(new ItemInstance(Tile::cobbleWall, 6, WallTile::TYPE_DIORITE), //
+		L"ssczg",
+		L"###", //
+		L"###", //
+
+		L'#', new ItemInstance(Tile::stoneDecorative, 1, 2),
+		L'S');
+
+	addShapedRecipy(new ItemInstance(Tile::cobbleWall, 6, WallTile::TYPE_ANDESITE), //
+		L"ssczg",
+		L"###", //
+		L"###", //
+
+		L'#', new ItemInstance(Tile::stoneDecorative, 1, 0),
+		L'S');
+
+	addShapedRecipy(new ItemInstance(Tile::cobbleWall, 6, WallTile::TYPE_GRANITE), //
+		L"ssczg",
+		L"###", //
+		L"###", //
+
+		L'#', new ItemInstance(Tile::stoneDecorative, 1, 4),
+		L'S');
+
 	addShapedRecipy(new ItemInstance(Item::door_wood, 1), //
 		L"sssctg",
 		L"##", //
