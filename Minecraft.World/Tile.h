@@ -368,7 +368,6 @@ public:
 
 	static const int stoneDecorative_Id = 174;
 
-
 	static Tile *stone;
 	static GrassTile *grass;
 	static Tile *dirt;

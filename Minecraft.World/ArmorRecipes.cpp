@@ -44,31 +44,31 @@ void ArmorRecipes::_init()
 
 	// 4J-PB - removing the chain armour, since we show all possible recipes in the xbox game, and it's not one you can make
 	ADD_OBJECT(map[0],Item::leather);
-//	ADD_OBJECT(map[0],Tile::fire);
+	ADD_OBJECT(map[0],Tile::fire);
 	ADD_OBJECT(map[0],Item::ironIngot);
 	ADD_OBJECT(map[0],Item::diamond);
 	ADD_OBJECT(map[0],Item::goldIngot);
 
 	ADD_OBJECT(map[1],Item::helmet_leather);
-//	ADD_OBJECT(map[1],Item::helmet_chain);
+	ADD_OBJECT(map[1],Item::helmet_chain);
 	ADD_OBJECT(map[1],Item::helmet_iron);
 	ADD_OBJECT(map[1],Item::helmet_diamond);
 	ADD_OBJECT(map[1],Item::helmet_gold);
 
 	ADD_OBJECT(map[2],Item::chestplate_leather);
-//	ADD_OBJECT(map[2],Item::chestplate_chain);
+	ADD_OBJECT(map[2],Item::chestplate_chain);
 	ADD_OBJECT(map[2],Item::chestplate_iron);
 	ADD_OBJECT(map[2],Item::chestplate_diamond);
 	ADD_OBJECT(map[2],Item::chestplate_gold);
 
 	ADD_OBJECT(map[3],Item::leggings_leather);
-//	ADD_OBJECT(map[3],Item::leggings_chain);
+	ADD_OBJECT(map[3],Item::leggings_chain);
 	ADD_OBJECT(map[3],Item::leggings_iron);
 	ADD_OBJECT(map[3],Item::leggings_diamond);
 	ADD_OBJECT(map[3],Item::leggings_gold);
 
 	ADD_OBJECT(map[4],Item::boots_leather);
-//	ADD_OBJECT(map[4],Item::boots_chain);
+	ADD_OBJECT(map[4],Item::boots_chain);
 	ADD_OBJECT(map[4],Item::boots_iron);
 	ADD_OBJECT(map[4],Item::boots_diamond);
 	ADD_OBJECT(map[4],Item::boots_gold);

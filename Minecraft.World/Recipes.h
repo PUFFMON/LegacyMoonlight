@@ -17,6 +17,17 @@ import net.minecraft.world.level.tile.Tile;
 
 #include "Recipy.h"
 
+/*RECIPE LETTERS GUIDE
+* 
+* s: Number of lines.
+* c: next argument is a wchar_t
+* z: next argument is an ItemInstance
+* i: next argument is an Item
+* t: next argument is a Tile
+* g: next argument is a group (Structures, Tools, Decorations...)
+* 
+*/
+
 #pragma once
 using namespace std;
 

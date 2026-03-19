@@ -26,6 +26,7 @@ FurnaceRecipes::FurnaceRecipes()
 	addFurnaceRecipy(Item::chicken_raw_Id, new ItemInstance(Item::chicken_cooked), .35f);
 	addFurnaceRecipy(Item::fish_raw_Id, new ItemInstance(Item::fish_cooked), .35f);
 	addFurnaceRecipy(Tile::cobblestone_Id, new ItemInstance(Tile::stone), .1f);
+	addFurnaceRecipy(Tile::stone_Id, new ItemInstance(Tile::stoneDecorative, 1, 6), .1f);
 	addFurnaceRecipy(Item::clay_Id, new ItemInstance(Item::brick), .3f);
 	addFurnaceRecipy(Tile::clay_Id, new ItemInstance(Tile::clayHardened), .35f);
 	addFurnaceRecipy(Tile::cactus_Id, new ItemInstance(Item::dye_powder, 1, DyePowderItem::GREEN), .2f);

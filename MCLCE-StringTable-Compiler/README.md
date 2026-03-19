@@ -6,7 +6,7 @@ Example usage:
 
 ```
 npm i
-node index.js build languages.loc --folder "E:\LegacyMoonlight\Minecraft.Client\Windows64Media\loc" 
+node index.js build languages.loc --folder "E:\LegacyMoonlight\Minecraft.Client\Windows64Media\loc"
 
 (Avobe command might change depending on where you saved your repo)
 ```

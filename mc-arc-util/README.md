@@ -5,19 +5,17 @@ Simple scripts to convert Minecraft Legacy Console .arc files to .zip files and 
 ## Usage
 
 ```cmd
-arc2zip.py <Media.arc>
+python3 arc2zip.py E:\LegacyMoonlight\Minecraft.Client\Common\Media\MediaWindows64.arc
 ```
-Writes to `arc.zip`\
-_should support drag n' drop_
+Drag and drop languages.loc file to zip
 
 ---
 
 ```cmd
-zip2arc.py <*.zip>
+python3 zip2arc.py arc.zip
 ```
-Writes to `out.arc`\
-_should support drag n' drop_
 
+Rename out.arc to MediaWindows64.arc and push it in the game files
 ---
 
 ## Credits
